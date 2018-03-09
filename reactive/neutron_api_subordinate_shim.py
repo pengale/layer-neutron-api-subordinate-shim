@@ -1,5 +1,5 @@
 """
-Reactive functions for our shim -- most of our stuff just lives here.
+Reactive functions for our shim.
 """
 
 import subprocess
