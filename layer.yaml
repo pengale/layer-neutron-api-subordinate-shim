@@ -1,1 +1,6 @@
-includes: ['layer:basic']  # if you use any interfaces, add them here
+includes: ['layer:openstack', 'interface:neutron-plugin-api-subordinate']
+options:
+  basic:
+    use_venv: True
+    include_system_packages: True
+repo: git@github.com:petevg/layer-neutron-api-subordinate-shim

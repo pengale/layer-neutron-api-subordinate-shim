@@ -1,19 +1,23 @@
 name: neutron-api-subordinate-shim
-summary: <Fill in summary here>
-maintainer: Ubuntu <Ubuntu@localhost>
+summary: Shim used for testing neutron-api suborindate interface
+maintainer: Pete Vander Giessen <pete.vandergiessen@canonical.com>
 description: |
-  <Multi-line description here>
+  Use this charm for testing the neutron-api subordinate interface, or
+  as a template for writing a new suborindate charm. Has no practical
+  production use.
 tags:
-  # Replace "misc" with one or more whitelisted tags from this list:
-  # https://jujucharms.com/docs/stable/authors-charm-metadata
-  - misc
-subordinate: false
+  - openstack
+subordinate: true
+series:
+  - xenial
+  - bionic
+  - artful
+  - trusty
 provides:
-  provides-relation:
-    interface: interface-name
+  neutron-plugin-api-subordinate:
+    interface: neutron-plugin-api-subordinate
+    scope: container
 requires:
-  requires-relation:
-    interface: interface-name
-peers:
-  peer-relation:
-    interface: interface-name
+  container:
+    interface: juju-info
+    scope: container
